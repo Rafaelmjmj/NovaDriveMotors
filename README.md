@@ -11,6 +11,7 @@ Pipeline de engenharia de dados completo para análise de vendas de concessioná
 ---
 
 ## Arquitetura ELT
+![Dashboard Visão Geral](docs/diagrama_novadrive.png)
 
 ![Arquitetura ELT](view/Dados_SQL_NovaDrive.png)
 
