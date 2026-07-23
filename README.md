@@ -6,7 +6,7 @@ Pipeline de engenharia de dados completo para análise de vendas de concessioná
 
 ## Dashboard
 
-![Dashboard Visão Geral](docs/Dashboard_novadrive.png)
+![Dashboard Visão Geral](view/Dashboard_novadrive.png)
 
 ---
 
