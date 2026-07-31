@@ -1,0 +1,96 @@
+version: 2
+
+models:
+  # ---------- FATO ----------
+  - name: fct_vendas
+    columns:
+      - name: venda_id
+        data_tests:
+          - unique
+          - not_null
+      - name: cliente_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_clientes')
+                field: cliente_id
+      - name: veiculo_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_veiculos')
+                field: veiculo_id
+      - name: vendedor_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_vendedores')
+                field: vendedor_id
+      - name: concessionaria_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_concessionarias')
+                field: concessionaria_id
+      - name: valor_venda
+        data_tests:
+          - not_null
+
+  # ---------- DIMENSÕES ----------
+  - name: dim_clientes
+    columns:
+      - name: cliente_id
+        data_tests:
+          - unique
+          - not_null
+      - name: concessionaria_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_concessionarias')
+                field: concessionaria_id
+
+  - name: dim_cidades
+    columns:
+      - name: cidade_id
+        data_tests:
+          - unique
+          - not_null
+      - name: estado_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_estados')
+                field: estado_id
+
+  - name: dim_estados
+    columns:
+      - name: estado_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_veiculos
+    columns:
+      - name: veiculo_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_vendedores
+    columns:
+      - name: vendedor_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_concessionarias
+    columns:
+      - name: concessionaria_id
+        data_tests:
+          - unique
+          - not_null
